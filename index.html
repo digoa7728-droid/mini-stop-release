@@ -3,74 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mini stop - وزير الأكل</title>
+    <title>mini stop - وزير الأكل | تحميل التطبيق</title>
+    <!-- خط عربي أنيق من جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
-            text-align: center;
-            padding: 80px 20px;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* الهيدر أو الجزء العلوي */
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .logo-container {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #ff7b00, #ff4500);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px rgba(255, 123, 0, 0.4);
         }
-        .container {
-            max-width: 480px;
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        .logo-container i {
+            font-size: 40px;
+            color: #fff;
         }
+
         h1 {
-            color: #ff4757;
-            margin-bottom: 15px;
-            font-size: 30px;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 10px;
         }
-        p {
-            color: #666;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 35px;
+
+        h1 span {
+            color: #ff7b00;
         }
-        .download-btn {
-            display: inline-block;
-            background-color: #2ed573;
-            color: white;
-            text-decoration: none;
-            padding: 16px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(46, 213, 115, 0.4);
-            transition: all 0.3s ease;
-        }
-        .download-btn:hover {
-            background-color: #26af5f;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(46, 213, 115, 0.6);
-        }
-        .footer {
-            margin-top: 35px;
-            font-size: 13px;
+
+        p.subtitle {
+            font-size: 1.1rem;
             color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* المحتوى الرئيسي */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .download-card {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #ff7b00, #ff4500);
+            color: #fff;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(255, 123, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 123, 0, 0.6);
+        }
+
+        .app-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            font-size: 0.95rem;
+            color: #888;
+        }
+
+        .app-info div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .app-info i {
+            color: #ff7b00;
+        }
+
+        /* مميزات سريعة */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .feature-box i {
+            font-size: 28px;
+            color: #ff7b00;
+            margin-bottom: 12px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .feature-box p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #181818;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+
+        /* متجاوب مع الهواتف */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .download-card { padding: 20px; }
+            .app-info { flex-direction: column; gap: 10px; align-items: center; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>mini stop - وزير الأكل</h1>
-    <p>حمل التطبيق الآن واستمتع بتجربة طلب طعام سريعة وسهولة تامة في إدارة مطعمك ومشترياتك!</p>
-    
-    <a href="https://github.com/digoa7728-droid/mini-stop-release/releases/download/v1.0.0/app-arm64-v8a-release.apk" class="download-btn">تحميل التطبيق (APK)</a>
+    <header>
+        <div class="logo-container">
+            <i class="fa-solid fa-utensils"></i>
+        </div>
+        <h1>mini stop - <span>وزير الأكل</span></h1>
+        <p class="subtitle">وجهتك الأولى لإدارة طلباتك واكتشاف أشهى الأطباق بكل سهولة وبسرعة فائقة. حمّل التطبيق الآن واستمتع بتجربة فريدة!</p>
+    </header>
 
-    <div class="footer">
-        جميع الحقوق محفوظة &copy; 2026
-    </div>
-</div>
+    <main>
+        <!-- كارد التحميل المباشر -->
+        <div class="download-card">
+            <h2 style="font-size: 1.5rem; margin-bottom: 10px; color: #fff;">نسخة الأندرويد الرسمية</h2>
+            <p style="color: #aaa; margin-bottom: 20px;">الإصدار الأخير • آمن وخفيف على هاتفك</p>
+            
+            <!-- زر التحميل المباشر للـ APK -->
+            <a href="https://github.com/digoa7728-droid/mini-stop-release/releases/download/v1.0.0/app-release.apk" class="btn-download">
+                <i class="fa-solid fa-download"></i> تحميل التطبيق (APK)
+            </a>
+
+            <div class="app-info">
+                <div><i class="fa-solid fa-shield-halved"></i> آمن 100%</div>
+                <div><i class="fa-solid fa-bolt"></i> تثبيت سريع</div>
+                <div><i class="fa-solid fa-code-branch"></i> الإصدار v1.0.0</div>
+            </div>
+        </div>
+
+        <!-- المميزات -->
+        <div class="features">
+            <div class="feature-box">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <h3>سرعة فائقة</h3>
+                <p>تصفح الطلبات وعرضها بدون أي تقطيع أو تأخير.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-face-smile"></i>
+                <h3>واجهة مريحة</h3>
+                <p>تصميم عصري ومبسط مخصص لراحة عينيك أثناء الاستخدام.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <h3>تحديثات مستمرة</h3>
+                <p>مميزات وإضافات جديدة دائماً لخدمتك بشكل أفضل.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - mini stop | وزير الأكل</p>
+    </footer>
 
 </body>
 </html>
